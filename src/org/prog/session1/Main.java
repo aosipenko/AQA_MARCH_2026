@@ -21,7 +21,7 @@ public class Main {
 //        System.out.println(i * 50);
 //
 //        int k = 10*31;
-//        System.out.println(i);
+//        System.out.println(i); hello
 //        System.out.println(i - 200);
 
         boolean b1 = true;
