@@ -17,13 +17,21 @@ public class WebDriverFactory {
         switch (envType) {
             case "local-chrome":
                 return new ChromeDriver();
-            case "jenkins-chrome":
+            case "local-grid-chrome":
                 return new RemoteWebDriver(
                         new URL("http://localhost:4444/"),
                         new ChromeOptions());
-            case "jenkins-firefox":
+            case "jenkins-chrome":
+                return new RemoteWebDriver(
+                        new URL("http://selenium-hub:4444/"),
+                        new ChromeOptions());
+            case "local-grid-firefox":
                 return new RemoteWebDriver(
                         new URL("http://localhost:4444/"),
+                        new FirefoxOptions());
+            case "jenkins-firefox":
+                return new RemoteWebDriver(
+                        new URL("http://selenium-hub:4444/"),
                         new FirefoxOptions());
             default:
                 return new EdgeDriver();
