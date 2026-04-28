@@ -18,7 +18,8 @@ public class WebSteps {
     }
 
     @Given("I accept cookies if present")
-    public void acceptCookiesIfPresent() {
+    public void acceptCookiesIfPresent() throws InterruptedException {
+        Thread.sleep(2000);
         if (googlePage.isCookieFormDisplayed()) {
             log.info("Cookies are present - accepting");
             googlePage.acceptCookieForm();
@@ -28,8 +29,10 @@ public class WebSteps {
     }
 
     @When("I set search value to {string} First and Last name")
-    public void setSearchValueToFirstLastName(String alias) {
+    public void setSearchValueToFirstLastName(String alias) throws InterruptedException {
+        Thread.sleep(2000);
         googlePage.clickSearchInput();
+        Thread.sleep(2000);
         googlePage.setSearchValue((String) DataManager.DATA.get(alias));
     }
 
