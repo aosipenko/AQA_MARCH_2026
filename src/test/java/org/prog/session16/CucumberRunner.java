@@ -22,8 +22,8 @@ import java.sql.SQLException;
         glue = "org.prog.session16.steps",
         features = "src/test/resources/features",
         plugin = {
-                "json:target/Cucumber.json",
-                "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
+                "json:target/Cucumber.json"
+//                , "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm"
         }
 )
 @Slf4j
